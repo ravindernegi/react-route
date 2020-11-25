@@ -21,7 +21,14 @@ const App = (props) => {
             <Route exact path="/about">
               <About/>
             </Route>
+
+            <Route exact path="/about/:id">
+              <About/>
+            </Route>
             <Route exact path="/contact">
+              <Contact/>
+            </Route>
+            <Route exact path="/contact/:title">
               <Contact/>
             </Route>
             {/*<Route path="*">

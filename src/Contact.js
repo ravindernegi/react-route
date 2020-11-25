@@ -8,7 +8,7 @@ const Contact = (props) => {
   let match = useRouteMatch('/contact/:action');
   let query = useQuery();
   let {title} = useParams();
-  console.log(match.params.action);
+  //console.log(match.params.action);
   return (
       <div className="page">
           <h2>Contact</h2>

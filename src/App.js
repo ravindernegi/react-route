@@ -3,7 +3,7 @@ import {BrowserRouter as Router,Switch,Route, Link, Redirect} from 'react-router
 import Home from './Home';
 import About from './About';
 import Contact from './Contact';
-import NoFound from './404';
+import PrivateRoute from './PrivateRoute';
 const App = (props) => {
   return (
     <div className="container" >
@@ -18,9 +18,9 @@ const App = (props) => {
             <Route exact path="/">
               <Home/>
             </Route>
-            <Route exact path="/about">
+            <PrivateRoute exact path="/about">
               <About/>
-            </Route>
+            </PrivateRoute>
 
             <Route exact path="/about/:id">
               <About/>

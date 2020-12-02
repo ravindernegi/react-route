@@ -1,9 +1,6 @@
 import React from 'react';
-import {BrowserRouter as Router,Switch,Route, Link, Redirect} from 'react-router-dom';
-import Home from './Home';
-import About from './About';
-import Contact from './Contact';
-import PrivateRoute from './PrivateRoute';
+import {BrowserRouter as Router,Switch,Route, Link} from 'react-router-dom';
+import routes from './routes';
 const App = (props) => {
   return (
     <div className="container" >
@@ -15,27 +12,9 @@ const App = (props) => {
          <Link to="/contact">Contact</Link></p>
 
         <Switch>
-            <Route exact path="/">
-              <Home/>
-            </Route>
-            <PrivateRoute exact path="/about">
-              <About/>
-            </PrivateRoute>
-
-            <Route exact path="/about/:id">
-              <About/>
-            </Route>
-            <Route exact path="/contact">
-              <Contact/>
-            </Route>
-            <Route exact path="/contact/:title">
-              <Contact/>
-            </Route>
-            {/*<Route path="*">
-              <NoFound/>
-            </Route>
-  */}
-            <Redirect to="/"/>
+          {
+            routes.map((route,index)=>(<Route key={index} exact={route.exact} path={route.path} render={()=>(<route.component/>)}/>))
+          }
         </Switch>
       </Router>
 

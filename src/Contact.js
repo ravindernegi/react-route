@@ -1,11 +1,10 @@
 import React from 'react';
-import {useParams,useLocation,useRouteMatch} from 'react-router-dom';
+import {useParams,useLocation} from 'react-router-dom';
 
 const useQuery = () =>{
   return new URLSearchParams(useLocation().search);
 }
 const Contact = (props) => {
-  let match = useRouteMatch('/contact/:action');
   let query = useQuery();
   let {title} = useParams();
   //console.log(match.params.action);
